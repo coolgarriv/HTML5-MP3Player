@@ -8,15 +8,20 @@
 		
 		// Init
 		//
+		//////////////////////////////////////////////
 		window.onload = function(){
 			document.getElementById('btnPlay').addEventListener('click', playMusic, false);
 			document.getElementById('btnPause').addEventListener('click', pauseMusic, false);
 			document.getElementById('btnStop').addEventListener('click', stopMusic, false);
+			document.getElementById('btnVolUp').addEventListener('click', volUp, false);
+			document.getElementById('btnVolDown').addEventListener('click', volDown, false);
+			
 			player = document.getElementById('player');
 		};
 		
-		// Music Play Controls
+		// Music Pay Controls
 		//
+		///////////////////////////////////////////////////
 		function playMusic()
 		{
 			player.play();
@@ -32,6 +37,27 @@
 			player.pause();
 			player.currentTime = 0;
 		}
+		
+		// Volume Controls
+		//
+		function volUp()
+		{
+			if (player.volume < 1)
+			{
+				player.volume += 0.1;
+				console.log(player.volume);
+			}
+		}
+		
+		function volDown()
+		{
+			if (player.volume > 0.1)
+			{
+				player.volume -= 0.1;
+				console.log(player.volume);
+			}
+		}
+		
 	</script>
 </head>
 
@@ -43,6 +69,9 @@
 	<button id="btnPlay">Play</button>
 	<button id="btnPause">Pause</button>
 	<button id="btnStop">Stop</button>
+	<br />
+	<button id="btnVolUp">Volume +</button>
+	<button id="btnVolDown">Volume -</button>
 	
 </body>
 </html>
