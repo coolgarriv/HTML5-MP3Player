@@ -3,13 +3,46 @@
 <html>
 <head>
 	<title>Using the audio tag</title>
+	<script>
+		var player;
+		
+		// Init
+		//
+		window.onload = function(){
+			document.getElementById('btnPlay').addEventListener('click', playMusic, false);
+			document.getElementById('btnPause').addEventListener('click', pauseMusic, false);
+			document.getElementById('btnStop').addEventListener('click', stopMusic, false);
+			player = document.getElementById('player');
+		};
+		
+		// Music Play Controls
+		//
+		function playMusic()
+		{
+			player.play();
+		}
+		
+		function pauseMusic()
+		{
+			player.pause();
+		}
+		
+		function stopMusic()
+		{
+			player.pause();
+			player.currentTime = 0;
+		}
+	</script>
 </head>
 
 <body>
-	<audio controls="controls">
+	<audio id="player">
 		<source src="saturn.mp3">
 		<source src="saturn.ogg">
 	</audio>
+	<button id="btnPlay">Play</button>
+	<button id="btnPause">Pause</button>
+	<button id="btnStop">Stop</button>
 	
 </body>
 </html>
