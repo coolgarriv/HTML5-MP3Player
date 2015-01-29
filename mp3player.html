@@ -15,6 +15,7 @@
 	
 	<script>
 		var player;
+		var intv;
 		
 		// Init
 		//
@@ -27,6 +28,8 @@
 			document.getElementById('btnVolDown').addEventListener('click', volDown, false);
 			
 			player = document.getElementById('player');
+			slider = document.getElementById("sliderTime");
+			slider.addEventListener('change', reposition, false);
 		};
 		
 		// Music Pay Controls
@@ -35,17 +38,21 @@
 		function playMusic()
 		{
 			player.play();
+			intv = setInterval(update, 500);
+			slider.max = player.duration;
 		}
 		
 		function pauseMusic()
 		{
 			player.pause();
+			clearInterval(intv);
 		}
 		
 		function stopMusic()
 		{
 			player.pause();
 			player.currentTime = 0;
+			clearInterval(intv);
 		}
 		
 		// Volume Controls
@@ -68,6 +75,34 @@
 			}
 		}
 		
+		// Listener Functions
+		///
+		function update()
+		{
+			document.getElementById("songTime").innerHTML = milisToMins(player.currentTime);
+			slider.value = player.currentTime;
+		}
+		
+		function milisToMins(seconds)
+		{
+			var numminutes = Math.floor((((seconds % 31536000) % 86400) % 3600) /60);
+			var numseconds = (((seconds % 31536000) % 846400) % 3600)  % 60;
+			
+			if (numseconds >= 10)
+			{
+				return numminutes + ":" + Math.round(numseconds);	
+			}
+			else
+			{
+				return numminutes + ":0" + Math.round(numseconds);
+			}
+		}
+		
+		function reposition()
+		{
+			player.currentTime = slider.value;
+		}
+		
 	</script>
 </head>
 
@@ -85,7 +120,7 @@
 		<button id="btnVolUp"> <span class="glyphicon glyphicon-volume-up"> </button>
 		<button id="btnVolDown"> <span class="glyphicon glyphicon-volume-down"> </button>
 		<br />
-		<span id="songTime"></span>
+		<span id="songTime">0:00</span><input type="range" id="sliderTime"  min="0" value="0" />
 	
 	</div>
 </body>
