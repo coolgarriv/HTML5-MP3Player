@@ -2,7 +2,17 @@
 
 <html>
 <head>
-	<title>HTML5 MP3 PLayer</title>
+	<title>Using the audio tag</title>
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	
 	<script>
 		var player;
 		
@@ -62,17 +72,21 @@
 </head>
 
 <body>
-	<p>This HTML5 MP3 Player is crfeated using the AUDIO tag.</p>
-	<audio id="player">
-		<source src="saturn.mp3">
-		<source src="saturn.ogg">
-	</audio>
-	<button id="btnPlay">Play</button>
-	<button id="btnPause">Pause</button>
-	<button id="btnStop">Stop</button>
-	<br />
-	<button id="btnVolUp">Volume +</button>
-	<button id="btnVolDown">Volume -</button>
+	<div class="container">
+		<br />
+		<audio id="player">
+			<source src="saturn.mp3">
+			<source src="saturn.ogg">
+		</audio>
+		<button id="btnPlay"> <span class="glyphicon glyphicon-play"> </span> </button>
+		<button id="btnPause"> <span class="glyphicon glyphicon-pause"> </button>
+		<button id="btnStop"> <span class="glyphicon glyphicon-stop"> </button>
+		|
+		<button id="btnVolUp"> <span class="glyphicon glyphicon-volume-up"> </button>
+		<button id="btnVolDown"> <span class="glyphicon glyphicon-volume-down"> </button>
+		<br />
+		<span id="songTime"></span>
 	
+	</div>
 </body>
 </html>
