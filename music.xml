@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<music>
+    <composition>
+        <title>O MIo Babbino Caro</title>
+        <ccomposer>Puccini</ccomposer>
+        <time>2:12</time>
+        <filename>caro.mp3</filename>
+    </composition>
+    <composition>
+        <title>The Man I Love</title>
+        <ccomposer>Gershwin</ccomposer>
+        <time>2:57</time>
+        <filename>gershwin.mp3</filename>
+    </composition>
+    <composition>
+        <title>Allegro</title>
+        <ccomposer>Beethoven</ccomposer>
+        <time>3:45</time>
+        <filename>piano.mp3</filename>
+    </composition>
+    <composition>
+        <title>Prelude in C</title>
+        <ccomposer>Rachmaninov</ccomposer>
+        <time>3:48</time>
+        <filename>prelude.mp3</filename>
+    </composition>
+    <composition>
+        <title>Funeral March</title>
+        <ccomposer>Chopin</ccomposer>
+        <time>9:14</time>
+        <filename>funeral.mp3</filename>
+    </composition>
+</music>
